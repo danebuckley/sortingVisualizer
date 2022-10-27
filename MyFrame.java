@@ -1,25 +1,26 @@
 import javax.swing.Action;
 import javax.swing.JComboBox;
+import javax.swing.text.FlowView;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
 public class MyFrame extends JFrame implements ActionListener{ 
+
+    graphPanel graphPanel;
+    dropboxPanel dropbox;
+
     public MyFrame() {
-        final String[] sortTypes = {"Select a sorting method", "Selection Sort"};
-        final JTextField dropboxHeader = new JTextField("Choose a sorting algorithm");
-        JComboBox boxOfSort = new JComboBox<>(sortTypes);
-
-
+        dropbox = new dropboxPanel();
+        graphPanel = new graphPanel();        
+        this.setSize(500,500);
+        this.setLocationRelativeTo(null);
+        this.setLayout(new FlowLayout());
+        this.setResizable(false); //this will be fixed later
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //this.setLayout(new FlowLayout());
-        boxOfSort.setMaximumSize(new Dimension(10,20));
-        this.add(boxOfSort);
-        
-        this.pack();
+        this.add(dropbox);
+        this.add(graphPanel);
         this.setVisible(true);
-
-
     }
 
     @Override
