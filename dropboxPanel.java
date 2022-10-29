@@ -2,10 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class dropboxPanel extends JPanel {
+    JComboBox boxOfSort;
+
     dropboxPanel() {
-        final String[] sortTypes = {"Select a sorting method", "Selection Sort"};
-        JComboBox boxOfSort = new JComboBox<>(sortTypes);
-        this.setPreferredSize(new Dimension(500,40));
-        this.add(boxOfSort);
+
     }
+
+    public String getSelected() {
+        System.out.println(boxOfSort.getSelectedItem().toString());
+        return boxOfSort.getSelectedItem().toString();
+    }
+    
 }

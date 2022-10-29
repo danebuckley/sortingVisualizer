@@ -6,7 +6,8 @@ import javax.swing.JFrame;
 public class Main extends JFrame { 
 
     public static void main(String[] args) {
-        new MyFrame();
+        int[] testArray = {8,2,4,3,7,6,9,5,1};
+        new MyFrame(testArray);
     }
 
     
